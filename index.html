@@ -310,13 +310,13 @@
         
           
             <p>title: 关于 Xcode8中 autolayout 约束作用时间问题<br>date: 2016-10-21 11:49:50</p>
-<p>####1.关于 awakeFromNib<br>awakeFromNib 是继承自 NSObject<br>这个方法是用来提供把 nib 文件加载到 application 中的，但是 nib 文件中添加的约束是什么时候生效的呢？</p>
+<h3 id="1-关于-awakeFromNib"><a href="#1-关于-awakeFromNib" class="headerlink" title="1.关于 awakeFromNib"></a>1.关于 awakeFromNib</h3><p>awakeFromNib 是继承自 NSObject<br>这个方法是用来提供把 nib 文件加载到 application 中的，但是 nib 文件中添加的约束是什么时候生效的呢？</p>
 <p>在 vc 的 viewDidLoad 调用之前，会先调用添加到 vc.view的子 View 的 awakeFromNib 方法（如果是从 nib 加载）,</p>
-<p>####2.layoutSubViews<br>从文档里可以看到，在 iOS5.1之前，这个方法does nothing,<br>否则，我们可以重写layoutSubViews中的约束来确定任何 subViews，不要直接调用，可以下一次视图更新之前调用 setNeedsLayout，如果想立即更新，调用 layoutIfNeeded.<br>view 的 layoutSubViews 被调用的情况:<br>1.addSubView<br>2.frame 发生改变<br>3.滑动 UIScrollView<br>4.旋转 Screen<br>5.改变 view的 subview 的 frame<br>6.调用 setLayoutSubViews</p>
-<p>####3.setNeedsLayout<br>标记为需要重新布局，异步调用 layoutIfNeeded,<br>在下一次 重新布局update cycle 之前调用 ,在主线程调用，因为 UIKit 下面的都不是线程安全的</p>
-<p>####4.layoutIfNeeded<br>立即刷新 UI</p>
-<p>####5.viewDidLayoutSubviews<br>当 vc.view的 bounds发生变化的时候，比如旋转。view会调整 subviews 的 position，然后系统会调用这个方法。</p>
-<p>####3.storyBoard 中约束作用时间问题<br>先在 storyBoard 的 vc.view 中添加一个 viewA,<br>我试着在 VC 的 awakeFromNib 里面打印在viewA,为nil，如果对 viewA 发送消息也是无效的，因为 viewA 为 nil。但是 vc.view 的信息能打印出来，vc.view 的约束是正确的.<br>那么在 storyBoard 中的 vc.view 上添加的子 View 是什么时候创建的呢？</p>
+<p>###2.layoutSubViews<br>从文档里可以看到，在 iOS5.1之前，这个方法does nothing,<br>否则，我们可以重写layoutSubViews中的约束来确定任何 subViews，不要直接调用，可以下一次视图更新之前调用 setNeedsLayout，如果想立即更新，调用 layoutIfNeeded.<br>view 的 layoutSubViews 被调用的情况:<br>1.addSubView<br>2.frame 发生改变<br>3.滑动 UIScrollView<br>4.旋转 Screen<br>5.改变 view的 subview 的 frame<br>6.调用 setLayoutSubViews</p>
+<p>###3.setNeedsLayout<br>标记为需要重新布局，异步调用 layoutIfNeeded,<br>在下一次 重新布局update cycle 之前调用 ,在主线程调用，因为 UIKit 下面的都不是线程安全的</p>
+<p>###4.layoutIfNeeded<br>立即刷新 UI</p>
+<p>###5.viewDidLayoutSubviews<br>当 vc.view的 bounds发生变化的时候，比如旋转。view会调整 subviews 的 position，然后系统会调用这个方法。</p>
+<p>###6.storyBoard 中约束作用时间问题<br>先在 storyBoard 的 vc.view 中添加一个 viewA,<br>我试着在 VC 的 awakeFromNib 里面打印在viewA,为nil，如果对 viewA 发送消息也是无效的，因为 viewA 为 nil。但是 vc.view 的信息能打印出来，vc.view 的约束是正确的.<br>那么在 storyBoard 中的 vc.view 上添加的子 View 是什么时候创建的呢？</p>
 <p>在 viewDidLoad 方法中打印 viewA,关键的来了，如果 storyBoard 中 viewA 存在 misplaced，viewA 打印出来的是<code>viewA:&lt;UIView: 0x7fd8595055e0; frame = (67 253; 240 128); autoresize = RM+BM; layer = &lt;CALayer: 0x60800003ecc0&gt;&gt;</code>，但是如果 updateFrames 之后，打印的是<code>viewA:&lt;UIView: 0x7feab1608610; frame = (0 0; 1000 1000); autoresize = RM+BM; layer = &lt;CALayer: 0x608000035140&gt;&gt;</code><br>所以一旦把 viewA updateFrames，约束的作用时间就延后了，在 ViewDidLoad 之后？？<br>我又试着在 storyBoard 的 vc.view中添加了一个 子 view： viewB<br>在 viewDidLoad 中手动添加约束，发现是能获取到 viewA 的约束的，说明在 storyBoard更新约束后， viewA 的约束作用时间确实延后了</p>
 <p><code>[UINib instantiateWithOwner:options:]</code>方法会调用<code>[ViewController awakeFromNib]</code>，</p>
 <p>VC 的 awakeFromNib 会调用 nib 文件里面 vc 的view 的子 View，然后 VC awakeFromNib<br>然后<code>[UIViewController loadViewIfRequired]</code>会调用<code>[ViewController viewDidLoad]</code>方法，</p>
