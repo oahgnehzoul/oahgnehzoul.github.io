@@ -1,28 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>没有草的草屋</title>
+<search>
   
-  <link href="/atom.xml" rel="self"/>
   
-  <link href="http://oahgnehzoul.github.io/"/>
-  <updated>2016-10-22T17:07:26.000Z</updated>
-  <id>http://oahgnehzoul.github.io/</id>
-  
-  <author>
-    <name>oahzol</name>
     
-  </author>
-  
-  <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>关于 Xcode8中 autolayout 约束作用时间问题</title>
-    <link href="http://oahgnehzoul.github.io/2016/10/21/%E5%85%B3%E4%BA%8E-Xcode8%E4%B8%AD-autolayout-%E7%BA%A6%E6%9D%9F%E4%BD%9C%E7%94%A8%E6%97%B6%E9%97%B4%E9%97%AE%E9%A2%98/"/>
-    <id>http://oahgnehzoul.github.io/2016/10/21/关于-Xcode8中-autolayout-约束作用时间问题/</id>
-    <published>2016-10-21T03:49:50.000Z</published>
-    <updated>2016-10-22T17:07:26.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1-关于-awakeFromNib"><a href="#1-关于-awakeFromNib" class="headerlink" title="1.关于 awakeFromNib"></a>1.关于 awakeFromNib</h3><p>awakeFromNib 是继承自 NSObject<br>这个方法是用来提供把 nib 文件加载到 application 中的，但是 nib 文件中添加的约束是什么时候生效的呢？</p>
+    <entry>
+      <title><![CDATA[关于 Xcode8中 autolayout 约束作用时间问题]]></title>
+      <url>http://oahgnehzoul.github.io/2016/10/21/%E5%85%B3%E4%BA%8E-Xcode8%E4%B8%AD-autolayout-%E7%BA%A6%E6%9D%9F%E4%BD%9C%E7%94%A8%E6%97%B6%E9%97%B4%E9%97%AE%E9%A2%98/</url>
+      <content type="html"><![CDATA[<h3 id="1-关于-awakeFromNib"><a href="#1-关于-awakeFromNib" class="headerlink" title="1.关于 awakeFromNib"></a>1.关于 awakeFromNib</h3><p>awakeFromNib 是继承自 NSObject<br>这个方法是用来提供把 nib 文件加载到 application 中的，但是 nib 文件中添加的约束是什么时候生效的呢？</p>
 <p>在 vc 的 <code>viewDidLoad</code> 调用之前，会先调用添加到 vc.view的子 View 的 <code>awakeFromNib</code> 方法（如果是从 nib 加载）</p>
 <h3 id="2-layoutSubViews"><a href="#2-layoutSubViews" class="headerlink" title="2.layoutSubViews"></a>2.layoutSubViews</h3><p>从文档里可以看到，在 iOS5.1之前，这个方法does nothing,<br>否则，我们可以重写layoutSubViews中的约束来确定任何 subViews，不要直接调用，可以下一次视图更新之前调用 setNeedsLayout，如果想立即更新，调用 layoutIfNeeded.<br>view 的 layoutSubViews 被调用的情况:<br>1.addSubView<br>2.frame 发生改变<br>3.滑动 UIScrollView<br>4.旋转 Screen<br>5.改变 view的 subview 的 frame<br>6.调用 setLayoutSubViews</p>
 <h3 id="3-setNeedsLayout"><a href="#3-setNeedsLayout" class="headerlink" title="3.setNeedsLayout"></a>3.setNeedsLayout</h3><p>标记为需要重新布局，异步调用 layoutIfNeeded,<br>在下一次 重新布局update cycle 之前调用 ,在主线程调用，因为 UIKit 下面的都不是线程安全的</p>
@@ -32,24 +16,12 @@
 <p><code>[UINib instantiateWithOwner:options:]</code>方法会调用<code>[ViewController awakeFromNib]</code>，</p>
 <p>VC 的<code>awakeFromNib</code>会调用 nib 文件里面 vc 的view 的子 View，然后 VC <code>awakeFromNib</code>然后<code>[UIViewController loadViewIfRequired]</code>会调用<code>[ViewController viewDidLoad]</code>方法，</p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;h3 id=&quot;1-关于-awakeFromNib&quot;&gt;&lt;a href=&quot;#1-关于-awakeFromNib&quot; class=&quot;headerlink&quot; title=&quot;1.关于 awakeFromNib&quot;&gt;&lt;/a&gt;1.关于 awakeFromNib&lt;/h3&gt;&lt;p&gt;awakeFromN
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>OC 中的一些基础知识</title>
-    <link href="http://oahgnehzoul.github.io/2016/10/20/OC-%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    <id>http://oahgnehzoul.github.io/2016/10/20/OC-中的一些基础知识/</id>
-    <published>2016-10-20T04:07:33.000Z</published>
-    <updated>2016-10-22T17:07:57.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="1-runtime"><a href="#1-runtime" class="headerlink" title="1.runtime"></a>1.runtime</h3><p>runtime 解释成中文就是[运行时]，是 OC 语言区别于 C 语言（静态语言）的动态特性。C 语言的方法调用在编译器就决定好，然后执行；OC 的方法调用本质上是消息发送，在编译器不知道要调用哪个函数，runtime 就是用来在运行的时候去找到调用的方法。</p>
+    <entry>
+      <title><![CDATA[OC 中的一些基础知识]]></title>
+      <url>http://oahgnehzoul.github.io/2016/10/20/OC-%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
+      <content type="html"><![CDATA[<h3 id="1-runtime"><a href="#1-runtime" class="headerlink" title="1.runtime"></a>1.runtime</h3><p>runtime 解释成中文就是[运行时]，是 OC 语言区别于 C 语言（静态语言）的动态特性。C 语言的方法调用在编译器就决定好，然后执行；OC 的方法调用本质上是消息发送，在编译器不知道要调用哪个函数，runtime 就是用来在运行的时候去找到调用的方法。</p>
 <h3 id="2-OC中的object"><a href="#2-OC中的object" class="headerlink" title="2.OC中的object"></a>2.OC中的object</h3><p>什么是对象呢？任何一个物体都可以看做一个对象，一支笔，一个人，中国人，<br>OC 中，对象都可以用 id 来指向，</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> objc_object *id;</div><div class="line"><span class="comment">//public objc.h里的 objc_object 结构体</span></div><div class="line"><span class="keyword">struct</span> objc_object &#123;</div><div class="line">	Class isa OBJC_ISA_AVAILABILITY;</div><div class="line">&#125;</div><div class="line"><span class="comment">//objc-privated.h 里面的 objc_object 结构体</span></div><div class="line"><span class="keyword">struct</span> objc_object &#123;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">	<span class="keyword">isa_t</span> isa;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">	<span class="function">Class <span class="title">ISA</span><span class="params">()</span></span>;</div><div class="line">	<span class="function">Class <span class="title">getIsa</span><span class="params">()</span></span>;</div><div class="line">	...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>id是一个指向 objc_object 结构体的指针，<br>在 objc_object private结构体里面，有一个 isa 指针,<br>ISA()是返回 有 tagged pointer 的object 的isa.cls</p>
@@ -64,37 +36,19 @@
 <h3 id="5-消息传递过程"><a href="#5-消息传递过程" class="headerlink" title="5.消息传递过程"></a>5.消息传递过程</h3><p>objc_msgSend 调用过程<br>1.检测 SEL 是否应该被忽略<br>2.检测接收消息的 target 是否为 nil，如果是就忽略这个消息<br>3.通过 isa 寻找方法，直至根类 NSObject/NSProxy<br>  如果没找到就进入消息动态解析<br>在 public headers/message.h 中有<br><code>objc_msgSend(void /*id self, SEL op,...*/)</code><br><code>objc_msgSendSuper(void /*struct objc_super *super, SEL op,...*/)</code>等方法<br>比如我们调用[obj foo]方法，runtime 会转换成 <code>objc_msgSend（obj,@selector(foo));</code><br>因为对象(obj)是一个结构体，可以根据对象的地址获得 isa 指针，然后可以找到 isa 指向的类（obj的 Class），会在这个类中寻找对应的实例方法列表，列表中 key 是 SEL，value 是 IMP，@{SEL:IMP}，IMP 是指向方法实现的指针，如果当前方法列表中没有，会找到 superClass，在 superClass 中寻找<br><img src="http://upload-images.jianshu.io/upload_images/943858-0077900c0a20d492.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"></p>
 <h5 id="6-消息动态解析"><a href="#6-消息动态解析" class="headerlink" title="6.消息动态解析"></a>6.消息动态解析</h5><p><img src="http://upload-images.jianshu.io/upload_images/943858-7bbaf6ed68c48cab.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Paste_Image.png"><br>1.进入 resolveInstanceMethod 方法，默认为 NO，然后就会报错；我们可以通过 <code>class_addMethod</code>动态添加方法，并且返回 YES，就可以进入下一步。<br>2.进入 forwardingTargetForSelector 方法，默认返回 nil；我们可以指定某个对象来响应消息，进入下一步<br>3.进入 methodSignatureForSelector 方法，默认返回 nil；我们可以返回一个 methodSignature，进入 forwardInvocation,然后修改实现方法、响应对象。</p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;h3 id=&quot;1-runtime&quot;&gt;&lt;a href=&quot;#1-runtime&quot; class=&quot;headerlink&quot; title=&quot;1.runtime&quot;&gt;&lt;/a&gt;1.runtime&lt;/h3&gt;&lt;p&gt;runtime 解释成中文就是[运行时]，是 OC 语言区别于 C 语言（静态语言）
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>学习使用blog</title>
-    <link href="http://oahgnehzoul.github.io/2016/02/23/%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8blog/"/>
-    <id>http://oahgnehzoul.github.io/2016/02/23/学习使用blog/</id>
-    <published>2016-02-22T18:20:46.000Z</published>
-    <updated>2016-10-22T16:55:55.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>　　看了<a href="http://blog.devtang.com/2016/02/16/from-octopress-to-hexo/" target="_blank" rel="external">从Octopress迁移到Hexo</a>,然后看到下面评论中的<a href="http://king129.com" target="_blank" rel="external">king</a>的blog,觉得挺有意思的，看了些Hexo配合Github搭建博客的东西，造轮子copy了一下，一周只能休息一天真的不够o.o。<br>　　Markdown开头空格输入法切换为全角<br>　　主题是搬了<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">iissnan/hexo-theme-next</a>,看着简洁舒服。<br>为什么Cmd Markdown上传个本地图片还要￥99/年,买不起T.T<br>1.时间真的是个不经用的东西<br>2.为什么还有7篇读书笔记要写?<br>3.还要搞毕业设计真的头痛</p>
+    <entry>
+      <title><![CDATA[学习使用blog]]></title>
+      <url>http://oahgnehzoul.github.io/2016/02/23/%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8blog/</url>
+      <content type="html"><![CDATA[<p>　　看了<a href="http://blog.devtang.com/2016/02/16/from-octopress-to-hexo/" target="_blank" rel="external">从Octopress迁移到Hexo</a>,然后看到下面评论中的<a href="http://king129.com" target="_blank" rel="external">king</a>的blog,觉得挺有意思的，看了些Hexo配合Github搭建博客的东西，造轮子copy了一下，一周只能休息一天真的不够o.o。<br>　　Markdown开头空格输入法切换为全角<br>　　主题是搬了<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">iissnan/hexo-theme-next</a>,看着简洁舒服。<br>为什么Cmd Markdown上传个本地图片还要￥99/年,买不起T.T<br>1.时间真的是个不经用的东西<br>2.为什么还有7篇读书笔记要写?<br>3.还要搞毕业设计真的头痛</p>
 <blockquote>
 <p>第一次用这个Markdown写，没办法.<code>sleep</code></p>
 </blockquote>
 <p>切换了一个看着很简洁舒服的主题. 10.23</p>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;p&gt;　　看了&lt;a href=&quot;http://blog.devtang.com/2016/02/16/from-octopress-to-hexo/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;从Octopress迁移到Hexo&lt;/a&gt;,然后看到下面评论中的&lt;
-    
-    </summary>
-    
-    
-  </entry>
   
-</feed>
+  
+</search>
