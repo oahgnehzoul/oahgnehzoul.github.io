@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://oahgnehzoul.github.io/"/>
-  <updated>2016-10-23T11:34:14.000Z</updated>
+  <updated>2016-10-24T15:54:46.000Z</updated>
   <id>http://oahgnehzoul.github.io/</id>
   
   <author>
@@ -14,6 +14,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title> iOS中的静态库与动态库</title>
+    <link href="http://oahgnehzoul.github.io/2016/10/24/iOS%E9%9D%99%E6%80%81%E5%BA%93%E4%B8%8E%E5%8A%A8%E6%80%81%E5%BA%93/"/>
+    <id>http://oahgnehzoul.github.io/2016/10/24/iOS静态库与动态库/</id>
+    <published>2016-10-24T08:48:14.000Z</published>
+    <updated>2016-10-24T15:54:46.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="静态库"><a href="#静态库" class="headerlink" title="静态库"></a>静态库</h3><p>静态库:是一个外部函数与变量的集合体。<br>静态库的文件内容，通常包含一堆我们自定的变量与函数，内容不详动态链接库那么复杂，在编译期间由编译器和链接器将它集成到应用程序内，并制作成目标文件以及可以独立运行的可执行文件，这个可执行文件与编译可执行的程序，都是一种程序的静态创建。</p>
+<h4 id="与动态链接库比较"><a href="#与动态链接库比较" class="headerlink" title="与动态链接库比较"></a>与动态链接库比较</h4><h5 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h5><p>　　只需保证在开发者的计算机有正确的库文件，在以二进制发布时不需考虑在用户的计算机上库文件是否存在和版本问题，可避免DLL地狱(在 mw 系统中，因为 DLL 的版本或兼容性问题造成程序无法运行)等问题</p>
+<h5 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h5><p>　　生成的可执行文件体积较大。正是为了避免此问题，才开发了动态库技术。
+　　</p>
+<h3 id="动态链接库"><a href="#动态链接库" class="headerlink" title="动态链接库"></a>动态链接库</h3><p>是微软公司在微软视窗操作系统中实现共享函数库概念的一种实作方式。<br>动态链接，就是把一些经常会共用的代码（静态链接的 obj 程序库）制成 DLL 档，当可执行文件调用到 DLL 档内的函数时，Windows 操作系统会把 DLL 档加载到内存中，DLL 档本身就是可执行文件，当程序需求函数才进行链接。通过动态链接方式，可以降低内存浪费的发生。静态链接则是直接链接到可执行文件。</p>
+<p>以上摘抄自某<code>wiki</code>，以下摘自一些其他博客</p>
+<h3 id="iOS-里的静态库和动态库"><a href="#iOS-里的静态库和动态库" class="headerlink" title="iOS 里的静态库和动态库"></a>iOS 里的静态库和动态库</h3><p>之前被问到静态库和动态库什么区别。。<br>iOS 里可以静态链接库和动态链接库，但是由于 AppStore 的限制，上架应用只能使用苹果提供的动态链接库，第三方库只能做成静态库。<br>1.我们可以通过 Xcode 打包静态库，网上有很多教程，最终的结果是一个.a 和一堆.h。使用的时候把头文件导入，关联.a 静态库。<br>2.将静态库打包成.framework,</p>
+<p>编译过程和链接过程要区分开，静态库只在静态链接过程中起作用；静态库是 target object 文件的 archive 结构，链接时会将一些东西合并生成最终可执行文件的 Mach-O 结构</p>
+<p>大范围使用动态库会拖慢启动时间，动态链接器需要在程序加载时去执行链接过程，也就是说把静态链接做的事情放到运行时做；系统的 SDK 可以共享内存的方式减少向虚拟内存映射的,但是符号链接的过程不会少。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;静态库&quot;&gt;&lt;a href=&quot;#静态库&quot; class=&quot;headerlink&quot; title=&quot;静态库&quot;&gt;&lt;/a&gt;静态库&lt;/h3&gt;&lt;p&gt;静态库:是一个外部函数与变量的集合体。&lt;br&gt;静态库的文件内容，通常包含一堆我们自定的变量与函数，内容不详动态链接库那么复杂，在编译
+    
+    </summary>
+    
+      <category term="iOS" scheme="http://oahgnehzoul.github.io/categories/iOS/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>关于 Xcode8中 autolayout 约束作用时间问题</title>
