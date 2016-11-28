@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[Xcode 中添加 pch 文件的设置]]></title>
-      <url>https://oahgnehzoul.github.io/2016/11/12/Xcode-%E4%B8%AD%E6%B7%BB%E5%8A%A0-pch-%E6%96%87%E4%BB%B6%E7%9A%84%E5%8F%98%E5%8C%96/</url>
+      <url>http://oahgnehzoul.github.io/2016/11/12/Xcode-%E4%B8%AD%E6%B7%BB%E5%8A%A0-pch-%E6%96%87%E4%BB%B6%E7%9A%84%E5%8F%98%E5%8C%96/</url>
       <content type="html"><![CDATA[<p>打开 Xcode，Command+N 然后看到<br><img src="https://lh3.googleusercontent.com/-6Bfd4GgvAmE/WCboD3WU5ZI/AAAAAAAAAJI/-V1ofd2GIpM/I/14789388407123.jpg" alt=""><br>选择 PCH File，next<br>然后我们可以在 pch 文件中添加一些需要经常用到的头文件名，但是我们还需要Build Setting 中设置路径才能使用 pch 文件，<br><img src="https://lh3.googleusercontent.com/-O2Xc496VZgA/WCboEQxdYcI/AAAAAAAAAJM/5CRAYOXJei0/I/14789396492010.jpg" alt=""><br>需要在 <code>Build Setting</code> 中的 <code>Prefix Header</code> 后面设置路径，<br>之前的时候，记得设置的是绝对路径，比如<code>$(SRCROOT)/工程名/pch 文件名</code>，然后就自动转化成了<code>/Users/用户名/工程路径/工程名/pch 文件名</code>，比如有多人同时开发，路径是不同的;<br>现在这么做也是可以的，但是有另外一种方法，设置相对路径就可以了，比如工程名/pch 文件名。<br>从上面也是可以看出来<code>$(SRCROOT)</code>是可以获取到工程的绝对路径的，为了使用方便，我们设置相对路径就可以了吧，但是为什么需要我们做这一步呢，为什么不直接默认设置了？不太清楚。</p>
 <p>上面的 <code>Precompile Prefix Header</code> 选项可以缓存 pch 文件，提高编译速度。</p>
 ]]></content>
@@ -13,7 +13,7 @@
     
     <entry>
       <title><![CDATA[理解 OC 中的runtime]]></title>
-      <url>https://oahgnehzoul.github.io/2016/11/10/%E7%90%86%E8%A7%A3-OC%E4%B8%AD%E7%9A%84runtime/</url>
+      <url>http://oahgnehzoul.github.io/2016/11/10/%E7%90%86%E8%A7%A3-OC%E4%B8%AD%E7%9A%84runtime/</url>
       <content type="html"><![CDATA[<p>我们可以从<code>https://opensource.apple.com/tarballs/objc4/</code>下载到最新的<code>runtime</code>源码。<br>目前，最新的是<code>objc4-706.tar.gz</code>压缩包。<br>打开工程后，目录是这样的：</p>
 <figure class="highlight haml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">objc--</div><div class="line">-<span class="ruby">-Public Headers</span></div><div class="line">-<span class="ruby">-Private Headers</span></div><div class="line">-<span class="ruby">-Project Headers</span></div><div class="line">-<span class="ruby">-Obsolete Headers</span></div><div class="line">-<span class="ruby">-Obsolete Source</span></div><div class="line">-<span class="ruby">-Souce</span></div><div class="line">-<span class="ruby">-Other</span></div></pre></td></tr></table></figure>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/// A pointer to the function of a method implementation. </span></div><div class="line"><span class="meta">#<span class="meta-keyword">if</span> !OBJC_OLD_DISPATCH_PROTOTYPES</span></div><div class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">void</span> <span class="params">(*IMP)</span><span class="params">(<span class="keyword">void</span> <span class="comment">/* id, SEL, ... */</span> )</span></span>; </div><div class="line"><span class="meta">#<span class="meta-keyword">else</span></span></div><div class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">id</span> <span class="params">(*IMP)</span><span class="params">(id, SEL, ...)</span></span>; </div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div></pre></td></tr></table></figure>
@@ -33,7 +33,7 @@
     
     <entry>
       <title><![CDATA[原码、反码和补码计算]]></title>
-      <url>https://oahgnehzoul.github.io/2016/11/08/%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81/</url>
+      <url>http://oahgnehzoul.github.io/2016/11/08/%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81/</url>
       <content type="html"><![CDATA[<p>　　其中<code>~</code>是C 语言中取反位运算，比如<code>~10 = -11</code>，<code>~14 = -15</code>，<code>~8 = -9</code>，<code>~（-8）= 7</code>其实多算几次也可以发现很有规律，实际上是有一个公式<code>~(x) = -x - 1</code><br>举例：比如计算<code>~10</code>，<br><code>10</code>的原码是<code>00001010</code>,补码也是<code>00001010</code>,所以<code>10</code>的补码的反码是<code>11110101</code>，而补码<code>11110101</code>对应的原码是<code>10001011</code>，就是<code>-11</code>.</p>
 <p>计算机中的原码、反码、补码计算<br>正数的原码、反码、补码都是一样的。<br>负数的反码：符号位不变，其他按位取反<br>负数的补码：符号位不变，反码+1</p>
 <p>总结：计算机系统中，数值都是以补码来计算的，因为补码可以将符号位和数值域、加减法统一处理。</p>
@@ -42,7 +42,7 @@
     
     <entry>
       <title><![CDATA[学习 Swift 的一些记录]]></title>
-      <url>https://oahgnehzoul.github.io/2016/10/29/%E5%AD%A6%E4%B9%A0-Swift-%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/</url>
+      <url>http://oahgnehzoul.github.io/2016/10/29/%E5%AD%A6%E4%B9%A0-Swift-%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/</url>
       <content type="html"><![CDATA[<p>1.使用 class 和类名来创建类</p>
 <figure class="highlight crystal"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> &lt;<span class="comment">#name#&gt;: &lt;#super class#&gt; &#123;</span></span></div><div class="line">    &lt;<span class="comment">#code#&gt;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>2.创建类的时候并不一定要有根类，可以忽略父类<br>3.子类重写父类的方法必须需要加 override 关键字<br>4.使用 <code>func</code> 来声明函数</p>
@@ -60,7 +60,7 @@
     
     <entry>
       <title><![CDATA[总结 iOS 沙盒机制笔记]]></title>
-      <url>https://oahgnehzoul.github.io/2016/10/27/%E6%80%BB%E7%BB%93-iOS-%E6%B2%99%E7%9B%92%E6%9C%BA%E5%88%B6%E7%AC%94%E8%AE%B0/</url>
+      <url>http://oahgnehzoul.github.io/2016/10/27/%E6%80%BB%E7%BB%93-iOS-%E6%B2%99%E7%9B%92%E6%9C%BA%E5%88%B6%E7%AC%94%E8%AE%B0/</url>
       <content type="html"><![CDATA[<p>iOS 中每个 app 应用程序自行创建的独立的封闭的空间叫沙盒，读写机制叫沙河机制。<br>app 安装的时候沙盒目录就会自行创建，app删除的时候会删除。</p>
 <ul>
 <li>1.Documents:程序创建或应用浏览产生的文件数据</li>
@@ -72,7 +72,7 @@
     
     <entry>
       <title><![CDATA[iOS 动态更新方案]]></title>
-      <url>https://oahgnehzoul.github.io/2016/10/26/iOS-%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0%E6%96%B9%E6%A1%88/</url>
+      <url>http://oahgnehzoul.github.io/2016/10/26/iOS-%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0%E6%96%B9%E6%A1%88/</url>
       <content type="html"><![CDATA[<p>目前 iOS 上的动态更新方案主要有以下4种：</p>
 <ul>
 <li>HTML5</li>
@@ -86,7 +86,7 @@
     
     <entry>
       <title><![CDATA[ iOS 中的静态库与动态库]]></title>
-      <url>https://oahgnehzoul.github.io/2016/10/24/iOS-%E9%9D%99%E6%80%81%E5%BA%93%E4%B8%8E%E5%8A%A8%E6%80%81%E5%BA%93/</url>
+      <url>http://oahgnehzoul.github.io/2016/10/24/iOS-%E9%9D%99%E6%80%81%E5%BA%93%E4%B8%8E%E5%8A%A8%E6%80%81%E5%BA%93/</url>
       <content type="html"><![CDATA[<h3 id="静态库"><a href="#静态库" class="headerlink" title="静态库"></a>静态库</h3><p>静态库:是一个外部函数与变量的集合体。<br>静态库的文件内容，通常包含一堆我们自定的变量与函数，内容不详动态链接库那么复杂，在编译期间由编译器和链接器将它集成到应用程序内，并制作成目标文件以及可以独立运行的可执行文件，这个可执行文件与编译可执行的程序，都是一种程序的静态创建。</p>
 <h4 id="与动态链接库比较"><a href="#与动态链接库比较" class="headerlink" title="与动态链接库比较"></a>与动态链接库比较</h4><h5 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h5><p>　　只需保证在开发者的计算机有正确的库文件，在以二进制发布时不需考虑在用户的计算机上库文件是否存在和版本问题，可避免DLL地狱(在 mw 系统中，因为 DLL 的版本或兼容性问题造成程序无法运行)等问题</p>
 <h5 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h5><p>　　生成的可执行文件体积较大。正是为了避免此问题，才开发了动态库技术。
@@ -111,7 +111,7 @@ iPhone5s ~ 7Plus: x86_64
     
     <entry>
       <title><![CDATA[关于 Xcode8中 autolayout 约束作用时间问题]]></title>
-      <url>https://oahgnehzoul.github.io/2016/10/21/%E5%85%B3%E4%BA%8E-Xcode8%E4%B8%AD-autolayout-%E7%BA%A6%E6%9D%9F%E4%BD%9C%E7%94%A8%E6%97%B6%E9%97%B4%E9%97%AE%E9%A2%98/</url>
+      <url>http://oahgnehzoul.github.io/2016/10/21/%E5%85%B3%E4%BA%8E-Xcode8%E4%B8%AD-autolayout-%E7%BA%A6%E6%9D%9F%E4%BD%9C%E7%94%A8%E6%97%B6%E9%97%B4%E9%97%AE%E9%A2%98/</url>
       <content type="html"><![CDATA[<h3 id="关于-awakeFromNib"><a href="#关于-awakeFromNib" class="headerlink" title="关于 awakeFromNib"></a>关于 awakeFromNib</h3><p>awakeFromNib 是继承自 NSObject<br>这个方法是用来提供把 nib 文件加载到 application 中的，但是 nib 文件中添加的约束是什么时候生效的呢？</p>
 <p>在 vc 的 <code>viewDidLoad</code> 调用之前，会先调用添加到 vc.view的子 View 的 <code>awakeFromNib</code> 方法（如果是从 nib 加载）</p>
 <h3 id="layoutSubViews"><a href="#layoutSubViews" class="headerlink" title="layoutSubViews"></a>layoutSubViews</h3><p>从文档里可以看到，在 iOS5.1之前，这个方法does nothing,<br>否则，我们可以重写layoutSubViews中的约束来确定任何 subViews，不要直接调用，可以下一次视图更新之前调用 setNeedsLayout，如果想立即更新，调用 layoutIfNeeded.<br>view 的 layoutSubViews 被调用的情况:<br>1.addSubView<br>2.frame 发生改变<br>3.滑动 UIScrollView<br>4.旋转 Screen<br>5.改变 view的 subview 的 frame<br>6.调用 setLayoutSubViews</p>
@@ -126,7 +126,7 @@ iPhone5s ~ 7Plus: x86_64
     
     <entry>
       <title><![CDATA[复习 Cocoapods 的一些命令]]></title>
-      <url>https://oahgnehzoul.github.io/2016/10/20/%E5%A4%8D%E4%B9%A0-Cocoapods-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/</url>
+      <url>http://oahgnehzoul.github.io/2016/10/20/%E5%A4%8D%E4%B9%A0-Cocoapods-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/</url>
       <content type="html"><![CDATA[<p>昨天有看到说<code>ruby.taobao.org</code> 停止更新了，于是乎更新了<code>https://gems.ruby-china.org/</code></p>
 <h4 id="CocoaPods-的安装和更新"><a href="#CocoaPods-的安装和更新" class="headerlink" title="CocoaPods 的安装和更新"></a>CocoaPods 的安装和更新</h4><p>之前用<code>sudo gem install cocoapods</code>就可以了<br>现在在 <code>EI Capitan</code> 系统下得<code>sudo gem install -n /usr/local/bin cocoapods</code><br>我们安装的 <code>cocoapods</code> 的 repo 在 <code>~/.cocoapods</code> 目录下</p>
 <h4 id="卸载Cocoapods"><a href="#卸载Cocoapods" class="headerlink" title="卸载Cocoapods"></a>卸载Cocoapods</h4><p><code>sudo gem uninstall cocoapods -v xxxx</code><br>同理移除其他安装的 <code>gemlists</code></p>
@@ -138,7 +138,7 @@ iPhone5s ~ 7Plus: x86_64
     
     <entry>
       <title><![CDATA[OC 中的一些基础知识]]></title>
-      <url>https://oahgnehzoul.github.io/2016/10/20/OC-%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
+      <url>http://oahgnehzoul.github.io/2016/10/20/OC-%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</url>
       <content type="html"><![CDATA[<h3 id="runtime"><a href="#runtime" class="headerlink" title="runtime"></a>runtime</h3><p>runtime 解释成中文就是[运行时]，是 OC 语言区别于 C 语言（静态语言）的动态特性。C 语言的方法调用在编译器就决定好，然后执行；OC 的方法调用本质上是消息发送，在编译器不知道要调用哪个函数，runtime 就是用来在运行的时候去找到调用的方法。</p>
 <h3 id="OC中的object"><a href="#OC中的object" class="headerlink" title="OC中的object"></a>OC中的object</h3><p>什么是对象呢？任何一个物体都可以看做一个对象，一支笔，一个人，中国人，<br>OC 中，对象都可以用 id 来指向，</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">typedef</span> <span class="keyword">struct</span> objc_object *id;</div><div class="line"><span class="comment">//public objc.h里的 objc_object 结构体</span></div><div class="line"><span class="keyword">struct</span> objc_object &#123;</div><div class="line">	Class isa OBJC_ISA_AVAILABILITY;</div><div class="line">&#125;</div><div class="line"><span class="comment">//objc-privated.h 里面的 objc_object 结构体</span></div><div class="line"><span class="keyword">struct</span> objc_object &#123;</div><div class="line"><span class="keyword">private</span>:</div><div class="line">	<span class="keyword">isa_t</span> isa;</div><div class="line"><span class="keyword">public</span>:</div><div class="line">	<span class="function">Class <span class="title">ISA</span><span class="params">()</span></span>;</div><div class="line">	<span class="function">Class <span class="title">getIsa</span><span class="params">()</span></span>;</div><div class="line">	...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -158,7 +158,7 @@ iPhone5s ~ 7Plus: x86_64
     
     <entry>
       <title><![CDATA[学习使用 blog]]></title>
-      <url>https://oahgnehzoul.github.io/2016/02/23/%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8-blog/</url>
+      <url>http://oahgnehzoul.github.io/2016/02/23/%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8-blog/</url>
       <content type="html"><![CDATA[<p>　　看了<a href="http://blog.devtang.com/2016/02/16/from-octopress-to-hexo/" target="_blank" rel="external">从Octopress迁移到Hexo</a>,然后看到下面评论中的<a href="http://king129.com" target="_blank" rel="external">king</a>的blog,觉得挺有意思的，看了些Hexo配合Github搭建博客的东西，造轮子copy了一下，一周只能休息一天真的不够o.o。<br>　　Markdown开头空格输入法切换为全角<br>　　主题是搬了<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">iissnan/hexo-theme-next</a>,看着简洁舒服。<br>为什么Cmd Markdown上传个本地图片还要￥99/年,买不起T.T<br>1.时间真的是个不经用的东西<br>2.为什么还有7篇读书笔记要写?<br>3.还要搞毕业设计真的头痛</p>
 <blockquote>
 <p>第一次用这个Markdown写，没办法.<code>sleep</code></p>
