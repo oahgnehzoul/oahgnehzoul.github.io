@@ -4,9 +4,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://oahgnehzoul.com/"/>
+  <link href="http://oahgnehzoul.github.io/"/>
   <updated>2016-11-13T13:00:58.000Z</updated>
-  <id>https://oahgnehzoul.com/</id>
+  <id>http://oahgnehzoul.github.io/</id>
   
   <author>
     <name>oahgnehzoul</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Xcode 中添加 pch 文件的设置</title>
-    <link href="https://oahgnehzoul.com/2016/11/12/Xcode-%E4%B8%AD%E6%B7%BB%E5%8A%A0-pch-%E6%96%87%E4%BB%B6%E7%9A%84%E5%8F%98%E5%8C%96/"/>
-    <id>https://oahgnehzoul.com/2016/11/12/Xcode-中添加-pch-文件的变化/</id>
+    <link href="http://oahgnehzoul.github.io/2016/11/12/Xcode-%E4%B8%AD%E6%B7%BB%E5%8A%A0-pch-%E6%96%87%E4%BB%B6%E7%9A%84%E5%8F%98%E5%8C%96/"/>
+    <id>http://oahgnehzoul.github.io/2016/11/12/Xcode-中添加-pch-文件的变化/</id>
     <published>2016-11-12T08:12:53.000Z</published>
     <updated>2016-11-13T13:00:58.000Z</updated>
     
@@ -32,17 +32,17 @@
     
     </summary>
     
-      <category term="Xcode" scheme="https://oahgnehzoul.com/categories/Xcode/"/>
+      <category term="Xcode" scheme="http://oahgnehzoul.github.io/categories/Xcode/"/>
     
     
-      <category term="PCH" scheme="https://oahgnehzoul.com/tags/PCH/"/>
+      <category term="PCH" scheme="http://oahgnehzoul.github.io/tags/PCH/"/>
     
   </entry>
   
   <entry>
     <title>理解 OC 中的runtime</title>
-    <link href="https://oahgnehzoul.com/2016/11/10/%E7%90%86%E8%A7%A3-OC%E4%B8%AD%E7%9A%84runtime/"/>
-    <id>https://oahgnehzoul.com/2016/11/10/理解-OC中的runtime/</id>
+    <link href="http://oahgnehzoul.github.io/2016/11/10/%E7%90%86%E8%A7%A3-OC%E4%B8%AD%E7%9A%84runtime/"/>
+    <id>http://oahgnehzoul.github.io/2016/11/10/理解-OC中的runtime/</id>
     <published>2016-11-10T05:58:38.000Z</published>
     <updated>2016-11-13T14:43:04.000Z</updated>
     
@@ -68,17 +68,17 @@
     
     </summary>
     
-      <category term="OC" scheme="https://oahgnehzoul.com/categories/OC/"/>
+      <category term="OC" scheme="http://oahgnehzoul.github.io/categories/OC/"/>
     
     
-      <category term="runtime" scheme="https://oahgnehzoul.com/tags/runtime/"/>
+      <category term="runtime" scheme="http://oahgnehzoul.github.io/tags/runtime/"/>
     
   </entry>
   
   <entry>
     <title>原码、反码和补码计算</title>
-    <link href="https://oahgnehzoul.com/2016/11/08/%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81/"/>
-    <id>https://oahgnehzoul.com/2016/11/08/原码、反码和补码/</id>
+    <link href="http://oahgnehzoul.github.io/2016/11/08/%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81/"/>
+    <id>http://oahgnehzoul.github.io/2016/11/08/原码、反码和补码/</id>
     <published>2016-11-08T06:57:43.000Z</published>
     <updated>2016-11-13T12:59:28.000Z</updated>
     
@@ -93,17 +93,17 @@
     
     </summary>
     
-      <category term="基础" scheme="https://oahgnehzoul.com/categories/%E5%9F%BA%E7%A1%80/"/>
+      <category term="基础" scheme="http://oahgnehzoul.github.io/categories/%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="计算机原理" scheme="https://oahgnehzoul.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/"/>
+      <category term="计算机原理" scheme="http://oahgnehzoul.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/"/>
     
   </entry>
   
   <entry>
     <title>学习 Swift 的一些记录</title>
-    <link href="https://oahgnehzoul.com/2016/10/29/%E5%AD%A6%E4%B9%A0-Swift-%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/"/>
-    <id>https://oahgnehzoul.com/2016/10/29/学习-Swift-的一些记录/</id>
+    <link href="http://oahgnehzoul.github.io/2016/10/29/%E5%AD%A6%E4%B9%A0-Swift-%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/"/>
+    <id>http://oahgnehzoul.github.io/2016/10/29/学习-Swift-的一些记录/</id>
     <published>2016-10-29T04:54:50.000Z</published>
     <updated>2016-11-06T06:48:28.000Z</updated>
     
@@ -128,15 +128,15 @@
     
     </summary>
     
-      <category term="Swift" scheme="https://oahgnehzoul.com/categories/Swift/"/>
+      <category term="Swift" scheme="http://oahgnehzoul.github.io/categories/Swift/"/>
     
     
   </entry>
   
   <entry>
     <title>总结 iOS 沙盒机制笔记</title>
-    <link href="https://oahgnehzoul.com/2016/10/27/%E6%80%BB%E7%BB%93-iOS-%E6%B2%99%E7%9B%92%E6%9C%BA%E5%88%B6%E7%AC%94%E8%AE%B0/"/>
-    <id>https://oahgnehzoul.com/2016/10/27/总结-iOS-沙盒机制笔记/</id>
+    <link href="http://oahgnehzoul.github.io/2016/10/27/%E6%80%BB%E7%BB%93-iOS-%E6%B2%99%E7%9B%92%E6%9C%BA%E5%88%B6%E7%AC%94%E8%AE%B0/"/>
+    <id>http://oahgnehzoul.github.io/2016/10/27/总结-iOS-沙盒机制笔记/</id>
     <published>2016-10-27T14:48:30.000Z</published>
     <updated>2016-11-13T12:59:48.000Z</updated>
     
@@ -157,17 +157,17 @@
     
     </summary>
     
-      <category term="iOS" scheme="https://oahgnehzoul.com/categories/iOS/"/>
+      <category term="iOS" scheme="http://oahgnehzoul.github.io/categories/iOS/"/>
     
     
-      <category term="沙盒" scheme="https://oahgnehzoul.com/tags/%E6%B2%99%E7%9B%92/"/>
+      <category term="沙盒" scheme="http://oahgnehzoul.github.io/tags/%E6%B2%99%E7%9B%92/"/>
     
   </entry>
   
   <entry>
     <title>iOS 动态更新方案</title>
-    <link href="https://oahgnehzoul.com/2016/10/26/iOS-%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0%E6%96%B9%E6%A1%88/"/>
-    <id>https://oahgnehzoul.com/2016/10/26/iOS-动态更新方案/</id>
+    <link href="http://oahgnehzoul.github.io/2016/10/26/iOS-%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0%E6%96%B9%E6%A1%88/"/>
+    <id>http://oahgnehzoul.github.io/2016/10/26/iOS-动态更新方案/</id>
     <published>2016-10-26T04:40:19.000Z</published>
     <updated>2016-11-13T13:00:00.000Z</updated>
     
@@ -194,17 +194,17 @@
     
     </summary>
     
-      <category term="iOS" scheme="https://oahgnehzoul.com/categories/iOS/"/>
+      <category term="iOS" scheme="http://oahgnehzoul.github.io/categories/iOS/"/>
     
     
-      <category term="动态更新" scheme="https://oahgnehzoul.com/tags/%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0/"/>
+      <category term="动态更新" scheme="http://oahgnehzoul.github.io/tags/%E5%8A%A8%E6%80%81%E6%9B%B4%E6%96%B0/"/>
     
   </entry>
   
   <entry>
     <title> iOS 中的静态库与动态库</title>
-    <link href="https://oahgnehzoul.com/2016/10/24/iOS-%E9%9D%99%E6%80%81%E5%BA%93%E4%B8%8E%E5%8A%A8%E6%80%81%E5%BA%93/"/>
-    <id>https://oahgnehzoul.com/2016/10/24/iOS-静态库与动态库/</id>
+    <link href="http://oahgnehzoul.github.io/2016/10/24/iOS-%E9%9D%99%E6%80%81%E5%BA%93%E4%B8%8E%E5%8A%A8%E6%80%81%E5%BA%93/"/>
+    <id>http://oahgnehzoul.github.io/2016/10/24/iOS-静态库与动态库/</id>
     <published>2016-10-24T08:48:14.000Z</published>
     <updated>2016-11-13T13:00:16.000Z</updated>
     
@@ -235,17 +235,17 @@ iPhone5s ~ 7Plus: x86_64
     
     </summary>
     
-      <category term="iOS" scheme="https://oahgnehzoul.com/categories/iOS/"/>
+      <category term="iOS" scheme="http://oahgnehzoul.github.io/categories/iOS/"/>
     
     
-      <category term="动态库、静态库" scheme="https://oahgnehzoul.com/tags/%E5%8A%A8%E6%80%81%E5%BA%93%E3%80%81%E9%9D%99%E6%80%81%E5%BA%93/"/>
+      <category term="动态库、静态库" scheme="http://oahgnehzoul.github.io/tags/%E5%8A%A8%E6%80%81%E5%BA%93%E3%80%81%E9%9D%99%E6%80%81%E5%BA%93/"/>
     
   </entry>
   
   <entry>
     <title>关于 Xcode8中 autolayout 约束作用时间问题</title>
-    <link href="https://oahgnehzoul.com/2016/10/21/%E5%85%B3%E4%BA%8E-Xcode8%E4%B8%AD-autolayout-%E7%BA%A6%E6%9D%9F%E4%BD%9C%E7%94%A8%E6%97%B6%E9%97%B4%E9%97%AE%E9%A2%98/"/>
-    <id>https://oahgnehzoul.com/2016/10/21/关于-Xcode8中-autolayout-约束作用时间问题/</id>
+    <link href="http://oahgnehzoul.github.io/2016/10/21/%E5%85%B3%E4%BA%8E-Xcode8%E4%B8%AD-autolayout-%E7%BA%A6%E6%9D%9F%E4%BD%9C%E7%94%A8%E6%97%B6%E9%97%B4%E9%97%AE%E9%A2%98/"/>
+    <id>http://oahgnehzoul.github.io/2016/10/21/关于-Xcode8中-autolayout-约束作用时间问题/</id>
     <published>2016-10-21T03:49:50.000Z</published>
     <updated>2016-11-13T12:58:35.000Z</updated>
     
@@ -266,17 +266,17 @@ iPhone5s ~ 7Plus: x86_64
     
     </summary>
     
-      <category term="Xcode" scheme="https://oahgnehzoul.com/categories/Xcode/"/>
+      <category term="Xcode" scheme="http://oahgnehzoul.github.io/categories/Xcode/"/>
     
     
-      <category term="autolayout" scheme="https://oahgnehzoul.com/tags/autolayout/"/>
+      <category term="autolayout" scheme="http://oahgnehzoul.github.io/tags/autolayout/"/>
     
   </entry>
   
   <entry>
     <title>复习 Cocoapods 的一些命令</title>
-    <link href="https://oahgnehzoul.com/2016/10/20/%E5%A4%8D%E4%B9%A0-Cocoapods-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/"/>
-    <id>https://oahgnehzoul.com/2016/10/20/复习-Cocoapods-的一些命令/</id>
+    <link href="http://oahgnehzoul.github.io/2016/10/20/%E5%A4%8D%E4%B9%A0-Cocoapods-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/"/>
+    <id>http://oahgnehzoul.github.io/2016/10/20/复习-Cocoapods-的一些命令/</id>
     <published>2016-10-20T11:20:00.000Z</published>
     <updated>2016-11-13T12:58:14.000Z</updated>
     
@@ -295,15 +295,15 @@ iPhone5s ~ 7Plus: x86_64
     
     </summary>
     
-      <category term="Cocoapods" scheme="https://oahgnehzoul.com/categories/Cocoapods/"/>
+      <category term="Cocoapods" scheme="http://oahgnehzoul.github.io/categories/Cocoapods/"/>
     
     
   </entry>
   
   <entry>
     <title>OC 中的一些基础知识</title>
-    <link href="https://oahgnehzoul.com/2016/10/20/OC-%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
-    <id>https://oahgnehzoul.com/2016/10/20/OC-中的一些基础知识/</id>
+    <link href="http://oahgnehzoul.github.io/2016/10/20/OC-%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/"/>
+    <id>http://oahgnehzoul.github.io/2016/10/20/OC-中的一些基础知识/</id>
     <published>2016-10-20T04:07:33.000Z</published>
     <updated>2016-11-13T13:00:46.000Z</updated>
     
@@ -329,17 +329,17 @@ iPhone5s ~ 7Plus: x86_64
     
     </summary>
     
-      <category term="OC" scheme="https://oahgnehzoul.com/categories/OC/"/>
+      <category term="OC" scheme="http://oahgnehzoul.github.io/categories/OC/"/>
     
     
-      <category term="基础" scheme="https://oahgnehzoul.com/tags/%E5%9F%BA%E7%A1%80/"/>
+      <category term="基础" scheme="http://oahgnehzoul.github.io/tags/%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   
   <entry>
     <title>学习使用 blog</title>
-    <link href="https://oahgnehzoul.com/2016/02/23/%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8-blog/"/>
-    <id>https://oahgnehzoul.com/2016/02/23/学习使用-blog/</id>
+    <link href="http://oahgnehzoul.github.io/2016/02/23/%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8-blog/"/>
+    <id>http://oahgnehzoul.github.io/2016/02/23/学习使用-blog/</id>
     <published>2016-02-22T18:20:46.000Z</published>
     <updated>2016-10-26T05:53:08.000Z</updated>
     
