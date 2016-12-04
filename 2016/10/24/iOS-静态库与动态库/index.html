@@ -17,7 +17,7 @@ iPhone5s ~ 7Plus: x86_64
 5/5c: armv7s(armv7兼容 armv7s)
 5s ~ 6sPlus: arm64</code><br>当我们用 iPhone5s 以上的模拟器打包的静态库架构是 x86_64，如果运行在 iPhone5及以下的模拟器，会报<code>Undefined symbols for architecture i386</code><br>让静态库支持所有模拟器对应的架构<br><code>Build Setting-&gt;Build Active Architecture Only</code>(只构建当前选中的模拟器或者真机的架构)–&gt;No</p>
 <p>模拟器版本的静态库和真机版是不能通用的，<br>使用命令行可以合并静态库<br><code>lipo -create xxx1.a xxx2.a -output xxx3.a</code><br><code>lipo -info xxx.a</code> 可以查看 xxx.a 支持的架构</p>
-</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="https://oahgnehzoul.github.io/2016/10/24/iOS-静态库与动态库/" data-id="ciwaeb30t0007i2eakro9tgtk" class="article-share-link">分享到</a><div class="tags"><a href="/tags/动态库、静态库/">动态库、静态库</a></div><div class="post-nav"><a href="/2016/10/26/iOS-动态更新方案/" class="pre">iOS 动态更新方案</a><a href="/2016/10/21/关于-Xcode8中-autolayout-约束作用时间问题/" class="next">关于 Xcode8中 autolayout 约束作用时间问题</a></div><div id="disqus_thread"><script>var disqus_shortname = 'oahgnehzoul';
+</div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="https://oahgnehzoul.github.io/2016/10/24/iOS-静态库与动态库/" data-id="ciwaeoog50008nkea1osywr0t" class="article-share-link">分享到</a><div class="tags"><a href="/tags/动态库、静态库/">动态库、静态库</a></div><div class="post-nav"><a href="/2016/10/26/iOS-动态更新方案/" class="pre">iOS 动态更新方案</a><a href="/2016/10/21/关于-Xcode8中-autolayout-约束作用时间问题/" class="next">关于 Xcode8中 autolayout 约束作用时间问题</a></div><div id="disqus_thread"><script>var disqus_shortname = 'oahgnehzoul';
 var disqus_identifier = '2016/10/24/iOS-静态库与动态库/';
 var disqus_title = ' iOS 中的静态库与动态库';
 var disqus_url = 'https://oahgnehzoul.github.io/2016/10/24/iOS-静态库与动态库/';
