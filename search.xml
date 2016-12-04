@@ -4,6 +4,24 @@
   
     
     <entry>
+      <title><![CDATA[死宅的周末生活]]></title>
+      <url>https://oahgnehzoul.github.io/2016/12/04/%E6%AD%BB%E5%AE%85%E7%9A%84%E5%91%A8%E6%9C%AB%E7%94%9F%E6%B4%BB/</url>
+      <content type="html"><![CDATA[<p><img src="https://lh3.googleusercontent.com/-dunwNoDCeqU/WEPLw3xMZII/AAAAAAAAAJg/KdZ_nBmzqps/I/14808364902851.jpg" width="300"></p>
+<p>给网站添加了一下🔐，看着美观了一些。</p>
+<p>周末又要过去了，虽然这周只有一天。。😔</p>
+<p>有时候好像又不知道生活下去的动力在哪里了。这是不是抑郁症了。。<br>没打算去想也想不到周末可以去做哪些有意思的事。<br>像我这样的死宅怎么办😐<br>有时候会突然不知道动力在哪？</p>
+<p>最近会看的一些东西，《火星情报局》真的挺棒的，能让人开心一下。<br>《法医秦明》一开始挺吸引的，感觉结局真的烂尾了啊，有点狗血🐶的。失望😔..<br>对了，这周火影终于更新了，boomboomboom ..💥<br><img src="https://s-media-cache-ak0.pinimg.com/originals/d2/1a/62/d21a6243476628f2101d4958496b61d0.jpg" alt=""></p>
+<p>工作上的好像没什么可说的😷</p>
+<p>呀，有时候不那么开心的时候需要给自己找点乐子。</p>
+<p>要相信明天是美好的一天。</p>
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="298" height="52" src="http://music.163.com/outchain/player?type=2&id=28160230&auto=0&height=32"></iframe>
+
+
+
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Xcode 中添加 pch 文件的设置]]></title>
       <url>https://oahgnehzoul.github.io/2016/11/12/Xcode-%E4%B8%AD%E6%B7%BB%E5%8A%A0-pch-%E6%96%87%E4%BB%B6%E7%9A%84%E5%8F%98%E5%8C%96/</url>
       <content type="html"><![CDATA[<p>打开 Xcode，Command+N 然后看到<br><img src="https://lh3.googleusercontent.com/-6Bfd4GgvAmE/WCboD3WU5ZI/AAAAAAAAAJI/-V1ofd2GIpM/I/14789388407123.jpg" alt=""><br>选择 PCH File，next<br>然后我们可以在 pch 文件中添加一些需要经常用到的头文件名，但是我们还需要Build Setting 中设置路径才能使用 pch 文件，<br><img src="https://lh3.googleusercontent.com/-O2Xc496VZgA/WCboEQxdYcI/AAAAAAAAAJM/5CRAYOXJei0/I/14789396492010.jpg" alt=""><br>需要在 <code>Build Setting</code> 中的 <code>Prefix Header</code> 后面设置路径，<br>之前的时候，记得设置的是绝对路径，比如<code>$(SRCROOT)/工程名/pch 文件名</code>，然后就自动转化成了<code>/Users/用户名/工程路径/工程名/pch 文件名</code>，比如有多人同时开发，路径是不同的;<br>现在这么做也是可以的，但是有另外一种方法，设置相对路径就可以了，比如工程名/pch 文件名。<br>从上面也是可以看出来<code>$(SRCROOT)</code>是可以获取到工程的绝对路径的，为了使用方便，我们设置相对路径就可以了吧，但是为什么需要我们做这一步呢，为什么不直接默认设置了？不太清楚。</p>
