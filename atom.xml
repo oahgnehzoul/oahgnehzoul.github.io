@@ -311,7 +311,7 @@ iPhone5s ~ 7Plus: x86_64
     <link href="https://oahgnehzoul.github.io/2016/10/20/%E5%A4%8D%E4%B9%A0-Cocoapods-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4/"/>
     <id>https://oahgnehzoul.github.io/2016/10/20/复习-Cocoapods-的一些命令/</id>
     <published>2016-10-20T11:20:00.000Z</published>
-    <updated>2016-11-13T12:58:14.000Z</updated>
+    <updated>2016-12-05T15:59:39.000Z</updated>
     
     <content type="html"><![CDATA[<p>昨天有看到说<code>ruby.taobao.org</code> 停止更新了，于是乎更新了<code>https://gems.ruby-china.org/</code></p>
 <h4 id="CocoaPods-的安装和更新"><a href="#CocoaPods-的安装和更新" class="headerlink" title="CocoaPods 的安装和更新"></a>CocoaPods 的安装和更新</h4><p>之前用<code>sudo gem install cocoapods</code>就可以了<br>现在在 <code>EI Capitan</code> 系统下得<code>sudo gem install -n /usr/local/bin cocoapods</code><br>我们安装的 <code>cocoapods</code> 的 repo 在 <code>~/.cocoapods</code> 目录下</p>
@@ -319,6 +319,8 @@ iPhone5s ~ 7Plus: x86_64
 <h4 id="一些容易遗忘的命令"><a href="#一些容易遗忘的命令" class="headerlink" title="一些容易遗忘的命令"></a>一些容易遗忘的命令</h4><p><code>gem source</code> 查看当前 gem 源<br><code>gem source --remove xxxx</code> 移除源<br><code>gem source -a xxxx</code>添加源<br><code>gem list</code> 查看安装的 local gems 列表<br><code>sudo gem update --system</code> 更新 Ruby gems 版本</p>
 <h4 id="自动生成-gitignore文件"><a href="#自动生成-gitignore文件" class="headerlink" title="自动生成.gitignore文件"></a>自动生成<code>.gitignore</code>文件</h4><p>Github官方的上的<code>https://github.com/github/gitignore</code>有一些<code>.gitignore</code>文件，比较全。<br>同时，<code>https://www.gitignore.io/</code>上面也有教怎么自动生成<code>.gitignore</code> 文件。<br>我有对比过两个的差异，几乎没有。</p>
 <p>下面是我的zsh 关于 gitignore 的设置，可以参考.<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">gi</span><span class="params">()</span> </span>&#123; curl -L -s https:<span class="comment">//www.gitignore.io/api/$@ ;&#125;</span></div><div class="line">alias gitignore=<span class="string">'gi objective-c,xcode &gt;&gt; .gitignore'</span></div></pre></td></tr></table></figure></p>
+<p>2016.12.5（补）<br>今天在更新 Cocoapods 的时候,出现了一个问题。。<br><img src="https://lh3.googleusercontent.com/-6wtVtMXHzsU/WEWNned4XsI/AAAAAAAAAJw/GlgXOReM0Ks/I/14809532239664.jpg" alt=""></p>
+<p>然后打一下 <code>sudo gem install -n /usr/local/bin cocoapods</code>就行了。。<br><a href="http://stackoverflow.com/questions/30812777/cannot-install-cocoa-pods-after-uninstalling-results-in-error" target="_blank" rel="external">这里是解决方法..🙈</a></p>
 ]]></content>
     
     <summary type="html">
@@ -328,8 +330,10 @@ iPhone5s ~ 7Plus: x86_64
     
     </summary>
     
-      <category term="Cocoapods" scheme="https://oahgnehzoul.github.io/categories/Cocoapods/"/>
+      <category term="tools" scheme="https://oahgnehzoul.github.io/categories/tools/"/>
     
+    
+      <category term="Cocoapods" scheme="https://oahgnehzoul.github.io/tags/Cocoapods/"/>
     
   </entry>
   
