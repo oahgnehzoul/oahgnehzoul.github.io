@@ -4,6 +4,21 @@
   
     
     <entry>
+      <title><![CDATA[iOS 程序的 main 函数]]></title>
+      <url>https://oahgnehzoul.github.io/2016/12/06/iOS-%E7%A8%8B%E5%BA%8F%E7%9A%84-main-%E5%87%BD%E6%95%B0/</url>
+      <content type="html"><![CDATA[<p>我们创建一个 iOS 的程序后，是从 main.m 函数开始执行的，在 main.m 里面是这样的：</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">int</span> main(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[]) &#123;</div><div class="line">    <span class="keyword">@autoreleasepool</span> &#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">UIApplicationMain</span>(argc, argv, <span class="literal">nil</span>, <span class="built_in">NSStringFromClass</span>([AppDelegate <span class="keyword">class</span>]));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="UIApplicationMain"><a href="#UIApplicationMain" class="headerlink" title="UIApplicationMain"></a>UIApplicationMain</h3><p><code>This function is called in the main entry point to create the application object and the application delegate and set up the event cycle.</code></p>
+<p> UIApplicationMain方法内部是一个消息循环，执行之后程序并没有退出。</p>
+<h4 id="Declaration"><a href="#Declaration" class="headerlink" title="Declaration"></a>Declaration</h4><p><code>int UIApplicationMain(int argc, char *argv[], NSString * __nullable principalClassName, NSString * __nullable delegateClassName);</code></p>
+<h4 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h4><p>第一二个是 main 函数的入参，分别代表参数个数和参数内容;<br>principalClassName 是 UIApplication class or subclass’s name，如果是 nil，默认就是 UIApplication.<br>delegateClassName<br>是应用程序的代理的类的实例的名字，如果 principalClassName 指向 UIApplication 的子类，可以把子类设成应用程序的代理；子类实例会收到应用代理消息，如果从应用程序的 main nib file 中设置 delegate,需要设置成 nil.</p>
+<h4 id="Return-Value"><a href="#Return-Value" class="headerlink" title="Return Value"></a>Return Value</h4><p>即使指定了返回类型，函数也是永远不会返回。当用户点击 home 键退出 iOS 程序后，应用程序移到后台。</p>
+<h4 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h4><p>此函数从主类实例化应用程序对象，设置应用程序的代理。初始化了主事件的循环（main event loop),包括应用程序循环，开始处理事件。如果应用程序的 Info.plist 指定加载一个 nib file,通过设置 NSMainNibFile key 和有效的 nib名字，函数就会从这个 nib 中加载。</p>
+<p>关于 iOS 程序中 main 函数之前发生了什么？<br>比如+ load 方法是在 main 函数执行之前的<br>dyld(the dynamic link editor)动态链接器<br>dyld 在完成环境的初始化后，配合 ImageLoader 将二进制文件按格式加载到内存，动态链接依赖库，并由 runtime 加载 objc 定义的结构，在初始化结束后，dyld 调用真正的 main 函数。<br>更具体的可以见<a href="http://blog.sunnyxx.com/2014/08/30/objc-pre-main/" target="_blank" rel="external">这篇 blog</a></p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[死宅的周末生活]]></title>
       <url>https://oahgnehzoul.github.io/2016/12/04/%E6%AD%BB%E5%AE%85%E7%9A%84%E5%91%A8%E6%9C%AB%E7%94%9F%E6%B4%BB/</url>
       <content type="html"><![CDATA[<p><img src="https://lh3.googleusercontent.com/-dunwNoDCeqU/WEPLw3xMZII/AAAAAAAAAJg/KdZ_nBmzqps/I/14808364902851.jpg" width="300"></p>
