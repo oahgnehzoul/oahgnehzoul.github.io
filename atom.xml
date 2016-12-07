@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>没有草的草屋</title>
+  <title>oahgnehzoul&#39;s notes</title>
   
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://oahgnehzoul.github.io/"/>
-  <updated>2016-12-06T16:12:06.000Z</updated>
+  <updated>2016-12-07T16:46:28.000Z</updated>
   <id>https://oahgnehzoul.github.io/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>理解 AutoreleasePool</title>
+    <link href="https://oahgnehzoul.github.io/2016/12/08/%E7%90%86%E8%A7%A3-AutoreleasePool/"/>
+    <id>https://oahgnehzoul.github.io/2016/12/08/理解-AutoreleasePool/</id>
+    <published>2016-12-07T16:01:28.000Z</published>
+    <updated>2016-12-07T16:46:28.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>OC 中有一个类是 NSAutoreleasePool,inherits from NSObject.<br><img src="https://lh3.googleusercontent.com/-6qPCmvrrb3Y/WEg8ycy_1aI/AAAAAAAAAKA/H2InbcdDG7A/I/14811265995943.jpg" alt=""><br>NSAutoreleasePool 只能在 MRC 下使用，</p>
+<p>在 ARC 下，我们可以使用@autoreleasepool,@autoreleasepool blocks 比用 NSAutoreleasePool 更有效率，而且 MRC环境下也可以使用。</p>
+<h4 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h4><p>在引用计数的环境下（与使用垃圾回收机制相反），NSAutoreleasePool 对象包含的对象如果收到 autorelease的消息，当 pool 释放的时候，包含的对象会 release.因此，使用 autorelease 来代替 release 会延长对象的生命周期，直到 pool 释放（如果随后 retain 对象，会更长）.一个对象可以放入同一个 pool 很多次，每次放入 pool 都会收到一次 release 消息。</p>
+<p>在引用计数环境下，Cocoa 希望总是有一个 autoreleasepool 可用。如果 pool 不可用，retoreleased 对象不会释放，就会内存泄露。在这种情况下，你的程序通常会记录对应的警告。</p>
+<p>Application Kit 在每一个事件循环(runloop)开始的时候会在主线程上创建一个自动释放池，并在runloop 结束的时候释放，从而释放在处理事件时生成的自动释放的对象。如果使用 Application Kit,你通常不需要创建 pools。如果你的程序在事件循环中创建了大量自动释放的对象，通常来讲，创建”local”自动释放池有助于最大限度地减少内存占用。</p>
+<p>你使用 alloc、init创建一个 NSAutoreleasePool 的，使用 drain （或者 release）来销毁， 然而你不能保留一个自动释放池，drain 一个 pool 最终会有 dealloc 的效果.我们应该在同一个上下文中(比如调用的方法或者循环体) drain 自动释放池,应该使用@autoreleasepool{}</p>
+<p>每个线程（包括主线程）会持有 NSAutoreleasePool 的队形的堆栈。当 pools 创建的时候，他们被添加到栈顶。当 pools 销毁的时候，从栈中移除。Autoreleased 对象回被放到当前线程的顶部释放池中。当线程结束时，会自动销毁与线程相关联的 autorelease pools.</p>
+<h4 id="Threads"><a href="#Threads" class="headerlink" title="Threads"></a>Threads</h4><p>如果你在 Application Kit的主线程之外调用 Cocoa,比如创建一个 Foundation-only 应用或者在创建一个线程，你需要创建自己的自动释放池。</p>
+<p>如果你的应用或者线程是长时间保留的，并且潜在地创建了大量的自动释放的对象，你需要创建自动释放池（像 Application Kit 在主线程上）；否则，自动释放的对象会大量积累从而增加内存的占用。然而，如果你创建的线程没有进行 Cocoa 调用，不需要使用自动释放池。</p>
+<figure class="highlight objectivec"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">note</div><div class="line">如果 你使用 POSIX 线程 API而不是 <span class="built_in">NSThread</span> 对象创建线程，则不能使用 cocoa,包括 <span class="built_in">NSAutoreleasePool</span>，除非 Cocoa 处于多线程模式。Cocoa 只在调用 <span class="built_in">NSThread</span> 的对象后进入多线程模式。要在 POSIX 线程上使用 Cocoa，应用需要先 detach 一个 <span class="built_in">NSThread</span> 对象，这可以立即退出。你可以使用 <span class="built_in">NSThread</span> 类中的方法来测试 Cocoa 是否处于多线程模式。</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;OC 中有一个类是 NSAutoreleasePool,inherits from NSObject.&lt;br&gt;&lt;img src=&quot;https://lh3.googleusercontent.com/-6qPCmvrrb3Y/WEg8ycy_1aI/AAAAAAAAAKA/H
+    
+    </summary>
+    
+      <category term="iOS" scheme="https://oahgnehzoul.github.io/categories/iOS/"/>
+    
+    
+      <category term="autorelease" scheme="https://oahgnehzoul.github.io/tags/autorelease/"/>
+    
+  </entry>
   
   <entry>
     <title>iOS 程序的 main 函数</title>
