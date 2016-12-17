@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://oahgnehzoul.github.io/"/>
-  <updated>2016-12-07T16:46:28.000Z</updated>
+  <updated>2016-12-17T14:54:02.000Z</updated>
   <id>https://oahgnehzoul.github.io/</id>
   
   <author>
@@ -14,6 +14,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>xcode 中一些有趣的东西</title>
+    <link href="https://oahgnehzoul.github.io/2016/12/17/xcode-%E4%B8%AD%E4%B8%80%E4%BA%9B%E6%9C%89%E8%B6%A3%E7%9A%84%E4%B8%9C%E8%A5%BF/"/>
+    <id>https://oahgnehzoul.github.io/2016/12/17/xcode-中一些有趣的东西/</id>
+    <published>2016-12-17T13:23:28.000Z</published>
+    <updated>2016-12-17T14:54:02.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>我们在用 Xcode 写代码调试 bug 时经常会用到 <a href="http://lldb.llvm.org" target="_blank" rel="external">LLDB</a>，一个很有趣的东西 🙄</p>
+<p>expression<br>expression/expr/e 命令可以修改变量的值。</p>
+<p>因为使用 p/po 命令可以查看某个变量的值。<br><img src="https://lh3.googleusercontent.com/-3b7OrdT-CzA/WFVQl9olGLI/AAAAAAAAAKc/JBJAtpXUfrA/I/14819836287111.jpg" alt=""></p>
+<p>那个$22感觉就像是这个变量指针，其实在 debug 的时候，$ 后面的这个数字会一直往上➕，只是一个调试的计数。</p>
+<p>所以打断点的时候可以用 expression 命令来改变值。</p>
+<p>frame variable/v<br>查看当前 frame 的变量</p>
+<p>只要代码中的 log 不是那么杂乱的话，调试的时候是不大有必要在代码中添加 log 的，因为那样需要重新运行一遍代码，如果有几千个Compile Sources 那么就 GG😒</p>
+<p>这个时候打个断点就比较方便。<br>最常见的是在左边显示行数的那栏点击添加，右键可以编辑(也可以使用 option+command+左键)</p>
+<p>另一个比较常用的是打 Symbolic Breakpoint，比如<br><img src="https://lh3.googleusercontent.com/-CLb1rIZ4q-c/WFVQmBlJ1nI/AAAAAAAAAKg/m0sx_8JufDk/I/14819844756369.jpg" alt=""><br>这样每次调用 viewDidLoad 方法的时候，都会进来。</p>
+<p>Action有这么多<br><img src="https://lh3.googleusercontent.com/-IUiaxXHuO0o/WFVQmQJ7DJI/AAAAAAAAAKk/evJJFf0lpmo/I/14819846099584.jpg" alt=""></p>
+<p>另外比较常用到的就是<br>F6:Step Over<br>F7:Step Into<br>F8:Step Out<br>另外的都是组合键，不大方便。<br>其他的比如用 Command+Y 来取消断点</p>
+<p>还有的一些 bt 打印堆栈信息。感觉并没有直接看左边那栏方便；</p>
+<p>image 命令用于寻址。<br>image lookup –address 0x000<br>不大常用。</p>
+<p>有时候使用命令的时候会出现 unknown type 这种错误。<br>可以在前面加上(void).</p>
+<p>比如打印 frame 的时候可以使用 p (CGRect)[self.view frame]</p>
+<p>另外一些 Xcode 常用到的快捷键。</p>
+<p>control+1：Show Related Items</p>
+<p>control+2:Show Previous History</p>
+<p>Control+5:Show Group Files</p>
+<p>Control+6:Show Document Items</p>
+<p>Command+F:Find</p>
+<p>Command+option+F:Find and Replace</p>
+<p>Command+Y:Deactivate BreakPoints</p>
+<p>一些关于 LLDB 参考学习的文章<br><a href="https://objccn.io/issue-19-2/" target="_blank" rel="external">与调试器共舞-LLDB的华尔兹</a><br><a href="http://www.starfelix.com/blog/2014/03/17/lldbdiao-shi-ming-ling-chu-tan/" target="_blank" rel="external">LLDB 调试命令初探</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我们在用 Xcode 写代码调试 bug 时经常会用到 &lt;a href=&quot;http://lldb.llvm.org&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;LLDB&lt;/a&gt;，一个很有趣的东西 🙄&lt;/p&gt;
+&lt;p&gt;expression&lt;br&gt;expre
+    
+    </summary>
+    
+      <category term="Xcode" scheme="https://oahgnehzoul.github.io/categories/Xcode/"/>
+    
+    
+      <category term="LLDB debug 快捷键" scheme="https://oahgnehzoul.github.io/tags/LLDB-debug-%E5%BF%AB%E6%8D%B7%E9%94%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>理解 AutoreleasePool</title>
@@ -169,31 +216,6 @@
     
     
       <category term="runtime" scheme="https://oahgnehzoul.github.io/tags/runtime/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>原码、反码和补码计算</title>
-    <link href="https://oahgnehzoul.github.io/2016/11/08/%E5%8E%9F%E7%A0%81%E3%80%81%E5%8F%8D%E7%A0%81%E5%92%8C%E8%A1%A5%E7%A0%81/"/>
-    <id>https://oahgnehzoul.github.io/2016/11/08/原码、反码和补码/</id>
-    <published>2016-11-08T06:57:43.000Z</published>
-    <updated>2016-11-13T12:59:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>　　其中<code>~</code>是C 语言中取反位运算，比如<code>~10 = -11</code>，<code>~14 = -15</code>，<code>~8 = -9</code>，<code>~（-8）= 7</code>其实多算几次也可以发现很有规律，实际上是有一个公式<code>~(x) = -x - 1</code><br>举例：比如计算<code>~10</code>，<br><code>10</code>的原码是<code>00001010</code>,补码也是<code>00001010</code>,所以<code>10</code>的补码的反码是<code>11110101</code>，而补码<code>11110101</code>对应的原码是<code>10001011</code>，就是<code>-11</code>.</p>
-<p>计算机中的原码、反码、补码计算<br>正数的原码、反码、补码都是一样的。<br>负数的反码：符号位不变，其他按位取反<br>负数的补码：符号位不变，反码+1</p>
-<p>总结：计算机系统中，数值都是以补码来计算的，因为补码可以将符号位和数值域、加减法统一处理。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;　　其中&lt;code&gt;~&lt;/code&gt;是C 语言中取反位运算，比如&lt;code&gt;~10 = -11&lt;/code&gt;，&lt;code&gt;~14 = -15&lt;/code&gt;，&lt;code&gt;~8 = -9&lt;/code&gt;，&lt;code&gt;~（-8）= 7&lt;/code&gt;其实多算几次也可以发现很有规律，实
-    
-    </summary>
-    
-      <category term="基础" scheme="https://oahgnehzoul.github.io/categories/%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="计算机原理" scheme="https://oahgnehzoul.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%8E%9F%E7%90%86/"/>
     
   </entry>
   
