@@ -1,10 +1,14 @@
-﻿{
+{
     "applinks": {
         "apps": [],
         "details": [
             {
-                "appID": "J3Q3X3YYZ2.com.hzl.UNTest",
+                "appID": "J3Q3X3YYZ2.com.Universal-Links-Demo",
                 "paths": ["*"]
+            },
+	    {
+                "appID": "747F34CKX6.com.zszq.ths.iphone",
+                "paths": ["/universalLink/*"]
             }
         ]
     }
