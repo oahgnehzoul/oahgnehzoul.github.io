@@ -3,8 +3,12 @@
         "apps": [],
         "details": [
             {
-                "appID": ["J3Q3X3YYZ2.com.hzl.Universal-Links-Demo","747F34CKX6.com.zszq.ths.iphone"],
+                "appID": "J3Q3X3YYZ2.com.hzl.Universal-Links-Demo",
                 "paths": ["*"]
+            },
+	    {
+                "appID": "747F34CKX6.com.zszq.ths.iphone",
+                "paths": ["/categories/*"]
             }
         ]
     }
